@@ -23,8 +23,20 @@ class MainActivity : AppCompatActivity() {
 
         activity_main.abc.setOnClickListener {
             shortToast(this,"点击了测试textview")
+            cases(1)
         }
     }
+
+    fun cases(obj: Any) {
+        when (obj) {
+            1 -> shortToast(this,"1")
+            "hello" -> print("Greeting")
+            is Long -> print("Long")
+            !is Long -> print("Not a string")
+            else -> print("Unknown")
+        }
+    }
+
 
     fun sum(a:Int,b:Int):Int{
         return a+b;
